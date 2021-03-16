@@ -14,7 +14,9 @@ public class Hilo extends Thread {
     public Hilo(TableroJuego lamina) {
         this.lamina=lamina;
     }
-
+/*
+Creamos un metodo que haga q cuando se ejecute se dentena el hilo
+ */
 public static void detener(){
         ejecutar=false;
 }

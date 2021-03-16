@@ -31,6 +31,11 @@ public class TableroJuego extends JPanel {
         dibujar(g2);
         g.drawImage(img, 100, 100, this);
         actualizar();
+        /*
+        Realizamos una condicion que haga q cuando las valiables contado tanto izquierda como derecha lleguen
+        a 5 se detenga el programa
+         */
+
         if (Pelota.cDerecha==5||Pelota.cIzquierda==5){
             Hilo.detener();
         }
