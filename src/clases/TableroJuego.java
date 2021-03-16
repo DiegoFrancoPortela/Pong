@@ -13,10 +13,10 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class TableroJuego extends JPanel {
-    Pelota pelota = new Pelota(0,0);
+    Pelota pelota = new Pelota(Ventana.ANCHO/2-10,Ventana.ALTO/2-10);
     Raqueta r1 = new Raqueta(10,100);
     Raqueta r2 = new Raqueta(794-10-Raqueta.ANCHO,200);
-
+    static boolean detener;
     BufferedImage img;
 
     public TableroJuego() {
@@ -31,6 +31,10 @@ public class TableroJuego extends JPanel {
         dibujar(g2);
         g.drawImage(img, 100, 100, this);
         actualizar();
+        if (Pelota.cDerecha==5||Pelota.cIzquierda==5){
+            Hilo.detener();
+        }
+
     }
 
     public void dibujar(Graphics2D g) {
