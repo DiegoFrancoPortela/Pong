@@ -37,8 +37,7 @@ public class TableroJuego extends JPanel {
         g.fill(pelota.getPelota());
         g.fill(r1.getRaqueta());
         g.fill(r2.getRaqueta());
-//        System.out.println("x: "+getBounds().getMaxX());
-//        System.out.println("y: "+getBounds().getMaxY());
+        g.drawLine(Ventana.ANCHO/2-10, 0, Ventana.ANCHO/2-10,Ventana.ALTO );
     }
 
     //Actualizar movimiento de la pelota
