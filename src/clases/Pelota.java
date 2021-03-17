@@ -33,8 +33,8 @@ public class Pelota {
         }
 
         if(x>limites.getMaxX()) {
-            x=Ventana.ANCHO/2-10;
-            y=Ventana.ALTO/2-10;
+            x= Ventanas.ANCHO/2-10;
+            y= Ventanas.ALTO/2-10;
             cIzquierda++;
 
         }
@@ -42,8 +42,8 @@ public class Pelota {
             dy=-dy;
         }
         if(x<0) {
-            x=Ventana.ANCHO/2-10;
-            y=Ventana.ALTO/2-10;
+            x= Ventanas.ANCHO/2-10;
+            y= Ventanas.ALTO/2-10;
             cDerecha++;
         }
         if(y<0) {

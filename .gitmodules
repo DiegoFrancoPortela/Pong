@@ -1,0 +1,3 @@
+[submodule "LibreriaPong"]
+	path = LibreriaPong
+	url = https://github.com/AFontanMoreira/LibreriaPong.git

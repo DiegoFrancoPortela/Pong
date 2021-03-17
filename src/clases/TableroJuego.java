@@ -5,15 +5,10 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class TableroJuego extends JPanel {
-    Pelota pelota = new Pelota(Ventana.ANCHO/2-10,Ventana.ALTO/2-10);
+    Pelota pelota = new Pelota(Ventanas.ANCHO/2-10, Ventanas.ALTO/2-10);
     Raqueta r1 = new Raqueta(10,200);
     Raqueta r2 = new Raqueta(794-10-10-Raqueta.ANCHO,200);
     static boolean detener;
@@ -46,7 +41,7 @@ public class TableroJuego extends JPanel {
         g.fill(pelota.getPelota());
         g.fill(r1.getRaqueta());
         g.fill(r2.getRaqueta());
-        g.drawLine(Ventana.ANCHO/2-10, 0, Ventana.ANCHO/2-10,Ventana.ALTO );
+        g.drawLine(Ventanas.ANCHO/2-10, 0, Ventanas.ANCHO/2-10, Ventanas.ALTO );
     }
 
     //Actualizar movimiento de la pelota

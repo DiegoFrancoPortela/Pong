@@ -1,6 +1,6 @@
 package principal;
 
-import clases.Ventana;
+import clases.Ventanas;
 
 public class Principal {
 
@@ -10,9 +10,9 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        Ventana ventana = new Ventana();
-        ventana.setVisible(true);
-        ventana.setDefaultCloseOperation(3);
+        Ventanas ventanas = new Ventanas();
+        ventanas.setVisible(true);
+        ventanas.setDefaultCloseOperation(3);
     }
 
 }
