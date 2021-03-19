@@ -38,7 +38,7 @@ public class Pelota {
             cIzquierda++;
 
         }
-        if(y>limites.getMaxY()) {
+        if(y>limites.getMaxY()-15) {
             dy=-dy;
         }
         if(x<0) {
