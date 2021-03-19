@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 public class TableroJuego extends JPanel {
     Pelota pelota = new Pelota(Ventanas.ANCHO/2-10, Ventanas.ALTO/2-10);
     Raqueta r1 = new Raqueta(10,200);
-    Raqueta r2 = new Raqueta(794-10-10-Raqueta.ANCHO,200);
+    Raqueta r2 = new Raqueta(794-10-Raqueta.ANCHO,200);
     static boolean detener;
     public static final int YCONT = 10;
     public static final int XCONT_IZQUIERDA = 340;
