@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class TableroJuego extends JPanel {
+
     Pelota pelota = new Pelota(Ventanas.ANCHO/2-10, Ventanas.ALTO/2-10);
     Raqueta r1 = new Raqueta(10,200);
     Raqueta r2 = new Raqueta(794-10-Raqueta.ANCHO,200);
@@ -25,6 +26,11 @@ public class TableroJuego extends JPanel {
         setBackground(Color.BLACK);
     }
 
+    /**
+     *
+     * @param g Una variable de tipo Graphics.
+     */
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -32,8 +38,13 @@ public class TableroJuego extends JPanel {
         g2.setColor(Color.WHITE);
         dibujar(g2);
         actualizar();
+
         try {
             //Contador Derecha
+            /**
+             * @param cDerecha Contador de los "goles" para el jugador de la derecha.
+             * @param cIzquierda Contador de los "goles" para el jugador de la izquierda.
+             */
             if (Pelota.cDerecha==0){
                 Derecha_numero = ImageIO.read(new File(ruta+"0.png"));
             } else if (Pelota.cDerecha==1){
@@ -69,7 +80,7 @@ public class TableroJuego extends JPanel {
         }
         g.drawImage(Izquierda_numero,XCONT_IZQUIERDA,YCONT,this);
         g.drawImage(Derecha_numero, XCONT_DERECHA, YCONT,this);
-        /*
+        /**
         Realizamos una condicion que haga q cuando las valiables contado tanto izquierda como derecha lleguen
         a 5 se detenga el programa
          */
@@ -80,6 +91,11 @@ public class TableroJuego extends JPanel {
 
     }
 
+    /**
+     *
+     * @param g Una variable de tipo Graphics.
+     */
+
     public void dibujar(Graphics2D g) {
         g.fill(pelota.getPelota());
         g.fill(r1.getRaqueta());
@@ -87,14 +103,20 @@ public class TableroJuego extends JPanel {
         g.drawLine(Ventanas.ANCHO/2-10, 0, Ventanas.ANCHO/2-10, Ventanas.ALTO );
     }
 
-    //Actualizar movimiento de la pelota
+    /**
+     * Actualizar movimiento de la pelota
+     */
     public void actualizar() {
         pelota.mover(getBounds(),colision(r1.getRaqueta()),colision(r2.getRaqueta()));
         r1.moverR1(getBounds());
         r2.moverR2(getBounds());
     }
 
-    //El .intersects controla que dos rectángulos se toquen.
+    /**
+     * El .intersects controla que dos rectángulos se toquen.
+     * @param r
+     * @return
+     */
     private boolean colision(Rectangle2D r) {
         return pelota.getPelota().intersects(r);
     }
